@@ -1,0 +1,30 @@
+{
+  "name": "eatwise-recoded",
+  "version": "1.0.0",
+  "description": "recoded...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js & npm start --prefix ./client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RuartRanosa/eatwise-recoded.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RuartRanosa/eatwise-recoded/issues"
+  },
+  "homepage": "https://github.com/RuartRanosa/eatwise-recoded#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "express-jwt": "^5.3.1",
+    "express-session": "^1.16.1",
+    "mysql": "^2.16.0",
+    "request": "^2.88.0"
+  }
+}
