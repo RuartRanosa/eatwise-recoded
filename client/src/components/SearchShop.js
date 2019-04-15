@@ -18,7 +18,7 @@ class SearchShop extends Component {
   searchShop(e){
     const query = e.target.value;
 
-    fetch('http://localhost:3001/home/search-all-shops/?name='+query)
+    fetch('http://localhost:3001/search-all-shops/?name='+query)
           .then((response) => { return response.json() })
           .then((result) => {
               console.log(result)
@@ -30,7 +30,7 @@ class SearchShop extends Component {
 
   componentDidMount(){
 
-    fetch('http://localhost:3001/home/view-shops/')
+    fetch('http://localhost:3001/view-shops/')
             .then((response) => { return response.json() })
             .then((result) => {
                 console.log(result)

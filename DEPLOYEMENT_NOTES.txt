@@ -1,0 +1,7 @@
+// in one terminal
+oc get pods
+oc get services
+oc port-forward eatwise-1-4p6rn 3002:3306
+
+// open another terminal to access the database
+mysql -u root --host=127.0.0.1 --port=3002

@@ -13,7 +13,7 @@ exports.register = function(req, res){
         password: req.body.password,
         location: "here"
     }
-    console.log(userData.username)
+    console.log(req.body.username)
     conn.query('insert into user(adminAccess, username, email, displayName, password, location) values(false, "'+userData.username+'", "'+userData.email+'", "'+userData.display_name+'", "'+userData.password+'", "'+req.body.location+'");', (err, result) => {
 		if(!err){
 			// bcryptjs.hash(req.body.password, 10, (err, hash) => {

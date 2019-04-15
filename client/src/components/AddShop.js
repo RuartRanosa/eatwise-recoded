@@ -25,7 +25,7 @@ class AddShop extends Component {
   onSubmit(e){
     e.preventDefault()
 
-    fetch('http://localhost:5000/home/add-shop',
+    fetch('http://localhost:3001/add-shop',
       {
         method: "POST",
         headers: {

@@ -24,7 +24,7 @@ class Shop extends Component {
         console.log(qs.parse(this.props.location.search, {ignoreQueryPrefix: true}))
         this.setState({name: shopName})
         this.setState({id: id})
-        fetch('http://localhost:3001/home/search-shop/?name='+shopName+"&id="+id)
+        fetch('http://localhost:3001/search-shop/?name='+shopName+"&id="+id)
             .then((response) => { return response.json() })
             .then((result) => {
                 console.log(result)

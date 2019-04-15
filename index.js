@@ -17,7 +17,7 @@ app.use(
 
 var Users = require('./Routers/router.js')
 
-app.use('/home', Users)
+app.use(Users)
 
 app.listen(port, () => {
     console.log("Server is running on port: " + port)
