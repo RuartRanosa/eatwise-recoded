@@ -10,9 +10,11 @@ class SearchShop extends Component {
   constructor(){
         super()
         this.state = {
-            shops: []
+            shops: [],
+            total: 0
         }
         this.searchShop = this.searchShop.bind(this)
+        this.randomize = this.randomize.bind(this)
   }
 
   searchShop(e){
@@ -28,12 +30,31 @@ class SearchShop extends Component {
 
   }
 
+  randomize(){
+    const array = []
+    var min = 1;
+    const rand = Math.floor(min + Math.random() * (this.state.total - min));
+    console.log(rand)
+    fetch('http://localhost:3001/view-shops/')
+            .then((response) => { return response.json() })
+            .then((result) => {
+                console.log(result[rand])
+                array.push(result[rand])
+                console.log(array)
+                this.setState({shops: array})
+            })
+            .catch((e) => { console.log(e)});
+
+  }
+
+
   componentDidMount(){
     fetch('http://localhost:3001/view-shops/')
             .then((response) => { return response.json() })
             .then((result) => {
                 console.log(result)
                 this.setState({shops: result})
+                this.setState({total: result.length})
             })
             .catch((e) => { console.log(e)});
   }
@@ -76,7 +97,9 @@ class SearchShop extends Component {
               <body>
                   {/*=================Search bar & results =================*/}
                 <article className="csearch-bar">
-                  <Button className = "search-button">Randomize</Button>
+                  <Button className = "search-button"
+                    onClick = {this.randomize} 
+                    >Randomize</Button>
                   <input type="text"
                     className="search-bar"
                     name="Search"
