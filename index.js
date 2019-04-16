@@ -4,7 +4,10 @@ const cors = require('cors')
 const express = require('express')
 const bodyParser = require('body-parser')
 var app = express()
-var port = process.env.PORT || 3001
+var ipaddr = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+var port = process.env.OPENSHIFT_NODEJS_PORT || 3001;
+
+
 
 app.use(bodyParser.json())
 app.use(cors())

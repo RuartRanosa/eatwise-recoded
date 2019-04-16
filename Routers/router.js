@@ -7,14 +7,28 @@ app.use(cors())
 
 process.env.SECRET_KEY = 'secret'
 
-let connection = mysql.createPool({
-    host: '127.0.0.1',
-    port: '3333',
-    user: 'root',
-    password: '',
-    database: 'eatwise',
-    connectionLimit: 10
+// let connection = mysql.createPool({
+//     host: '127.0.0.1',
+//     port: '3333',
+//     user: 'root',
+//     password: '',
+//     database: 'eatwise',
+//     connectionLimit: 10
+// });
+
+var mysqlHost = process.env.OPENSHIFT_MYSQL_DB_HOST || 'localhost';
+var mysqlPort = process.env.OPENSHIFT_MYSQL_DB_PORT || 3306;
+var mysqlUser = 'root'; //mysql username
+var mysqlPass = ''; //mysql password
+var mysqlDb   = 'eatwise'; //mysql database name
+
+var mysqlString = 'mysql://'   + mysqlUser + ':' + mysqlPass + '@' + mysqlHost + ':' + mysqlPort + '/' + mysqlDb;
+
+var connection = mysql.createConnection(mysqlString);
+connection.connect(function(err){
+  if (err) console.log(err);
 });
+
 
 // instantiate controllers
 const controllerUser = require('./../Controllers/controllerUser.js')
