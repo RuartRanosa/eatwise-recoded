@@ -1,7 +1,18 @@
-// in one terminal
+// logging in to database in openshift
+mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -h $HOSTNAME $MYSQL_DATABASE
+
+Username: user
+Password: useruser
+Database Name: eatwise
+Connection URL: mysql://eatwise-database:3306/
+
+// in one terminal or in "server" terminal in openshift website
 oc get pods
 oc get services
 oc port-forward eatwise-1-4p6rn 3002:3306
 
-// open another terminal to access the database
+// open another terminal to access the database or in "eatwise" terminal in openshift website
 mysql -u root --host=127.0.0.1 --port=3002
+
+
+// access the "website terminals" in Applications>Pods

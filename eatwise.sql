@@ -28,7 +28,7 @@ create table if not exists shop(
 create table if not exists review(
 	reviewId int(5) not null auto_increment,
 	userId int(5) not null,
-	reviewCreation TIMESTAMP NOT NULL DEFAULT(curdate()),
+	reviewCreation TIMESTAMP NOT NULL DEFAULT current_timestamp,
 	shopId int(5) not null,
 	comment varchar(150),
 	tips varchar(150),
@@ -39,7 +39,7 @@ create table if not exists review(
 create table if not exists report(
 	reportId int(5) not null auto_increment,
 	userId int(5) not null,
-	reportCreation TIMESTAMP NOT NULL DEFAULT(current_timestamp()),
+	reportCreation TIMESTAMP NOT NULL DEFAULT current_timestamp,
 	shopId int(5) not null,
 	reason varchar(150),
 	primary key(reportId)
@@ -47,7 +47,7 @@ create table if not exists report(
 
 create table if not exists log_user(
 	logId int(5) not null auto_increment,
-	time_stamp TIMESTAMP NOT NULL DEFAULT(current_timestamp()),
+	time_stamp TIMESTAMP NOT NULL DEFAULT current_timestamp,
 	action varchar(10),
 	userId int(5) not null,
 	adminAccess boolean,
@@ -60,7 +60,7 @@ create table if not exists log_user(
 
 create table if not exists log_shop(
 	logId int(5) not null auto_increment,
-	time_stamp TIMESTAMP NOT NULL DEFAULT(current_timestamp()),
+	time_stamp TIMESTAMP NOT NULL DEFAULT current_timestamp,
 	action varchar(10),
 	shopId int(5) not null,
 	name varchar(50),
@@ -75,7 +75,7 @@ create table if not exists log_shop(
 
 create table if not exists log_review(
 	logId int(5) not null auto_increment,
-	time_stamp TIMESTAMP NOT NULL DEFAULT(current_timestamp()),
+	time_stamp TIMESTAMP NOT NULL DEFAULT current_timestamp,
 	action varchar(10),
 	reviewId int(5) not null,
 	userId int(5),
@@ -89,7 +89,7 @@ create table if not exists log_review(
 
 create table if not exists log_report(
 	logId int(5) not null auto_increment,
-	time_stamp TIMESTAMP NOT NULL DEFAULT(current_timestamp()),
+	time_stamp TIMESTAMP NOT NULL DEFAULT current_timestamp,
 	action varchar(10),
 	reportId int(5) not null,
 	userId int(5),

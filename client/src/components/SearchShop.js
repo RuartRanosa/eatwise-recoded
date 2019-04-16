@@ -22,14 +22,13 @@ class SearchShop extends Component {
           .then((response) => { return response.json() })
           .then((result) => {
               console.log(result)
-              this.setState({shop: result})
+              this.setState({shops: result})
           })
           .catch((e) => { console.log(e)});
 
   }
 
   componentDidMount(){
-
     fetch('http://localhost:3001/view-shops/')
             .then((response) => { return response.json() })
             .then((result) => {
@@ -85,7 +84,7 @@ class SearchShop extends Component {
                     value={this.state.query}
                     onChange={this.searchShop}
                   />
-                  <Suggestions results = {this.state.shop} />
+                  <Suggestions results = {this.state.shops} />
                 {/*=========================================================*/}
                 </article>
               </body>            
