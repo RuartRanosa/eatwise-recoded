@@ -24,7 +24,11 @@
     "express": "^4.16.4",
     "express-jwt": "^5.3.1",
     "express-session": "^1.16.1",
+    "mapbox-gl": "^0.53.1",
     "mysql": "^2.16.0",
-    "request": "^2.88.0"
+    "react": "^16.8.6",
+    "react-dropzone": "^10.1.4",
+    "request": "^2.88.0",
+    "superagent": "^5.0.2"
   }
 }

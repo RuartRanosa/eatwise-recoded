@@ -119,7 +119,7 @@ class AddShop extends Component {
                   </div>
 
                   <button type = "submit"
-                    className = "btn btn-lg btn-primary btn-lock">
+                    className = "search-button">
                       Proceed
                   </button>
 
