@@ -1,8 +1,16 @@
 import React, { Component } from 'react'
 import SearchShop from './SearchShop'
 
+import MapGL, {NavigationControl} from 'react-map-gl';
 const qs = require("query-string")
 
+const TOKEN = 'pk.eyJ1IjoicnVhcnRyYW5vc2EiLCJhIjoiY2p1cXRla282MTVkczQzcGl5ZWk5MTNwOCJ9.fkQQbqTMnuvR9Y3sRE_EHg';
+const navStyle = {
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  padding: '10px'
+};
 class Shop extends Component {
     constructor() {
         super()
@@ -14,7 +22,16 @@ class Shop extends Component {
             location: "",
             description: "",
             menu: "",
-            votes: 0
+            votes: 0,
+            viewport: {
+                latitude: 14.179,
+                longitude: 121.226,
+                zoom: 100,
+                bearing: 0,
+                pitch: 0,
+                width: 500,
+                height: 500,
+              }
         }
     }
 
@@ -53,6 +70,7 @@ class Shop extends Component {
                     </div>
                     <table>
                         <tbody>
+                        <tr>
                             <tr>
                                 <td>Shop name: </td>
                                 <td>{this.state.name}</td>
@@ -85,6 +103,17 @@ class Shop extends Component {
                                 <td>Votes: </td>
                                 <td>{this.state.votes}</td>
                             </tr>
+                           </tr> 
+                           <tr>
+                           <MapGL
+                            {...this.state.viewport}
+                            mapStyle="mapbox://styles/mapbox/dark-v9"
+                            mapboxApiAccessToken={TOKEN}>
+                            <div className="nav" style={navStyle}>
+                              <NavigationControl/>
+                            </div>
+                          </MapGL>
+                           </tr>
                         </tbody>
                     </table>
                     <button onClick = {this.addShop}

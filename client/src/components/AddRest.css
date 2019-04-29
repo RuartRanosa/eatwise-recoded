@@ -1,0 +1,81 @@
+
+#pagename{
+  width: 80%;
+  color: #e84c4c;
+  font-size: 2em;
+  font-family: "Georgia", serif;
+  display: inline-block;
+  padding: 10px;
+  position: relative;
+  margin: 20px auto; 
+  float: left;
+  margin-left: 100px;
+}
+
+form{
+  width: 80%;
+  position: relative;
+  background-color: white;
+  display:inline-block;
+  padding: 10px;
+  margin-left: 100px;
+
+}
+
+label{
+  color: #e84c4c;
+  font-size: 1em;
+  padding: 5px;
+  font-family: "Georgia", serif;
+  display: inline-block;
+  position: relative;
+}
+
+.text-input{
+  border-radius: 5px;
+  border-color: #c12c2c;
+  border-width: 1px;
+  margin: 5px;
+  padding: 5px;
+  position: relative;
+  font-family: "Georgia", serif;
+  color: #e84c4c;
+  width: 42%
+}
+
+.dd_button{
+  border-radius: 5px;
+  border-color: #e84c4c;
+  border-style: solid;
+  border-width: 1px;
+  background-color: white;
+  color: #e84c4c;
+  font-size: 1em;
+  margin-left: 100px;
+  font-family: "Georgia", serif;
+  padding: 1px;
+  padding-left:3px;
+  padding-right:3px;
+}
+
+.dropdown_container{
+  position: relative;
+  display: inline-block;
+}
+
+#upload_button input[type=file] {
+  display:none;
+}
+
+#submitbutton{
+  float: right;
+  display: inline-block;
+}
+
+#mapbox-container{
+  width: 50%;
+  display: inline-block;
+  position: relative;
+  float: right;
+  height: 300px;
+}

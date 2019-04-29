@@ -3,6 +3,10 @@ import {Link} from 'react-router-dom'
 import jwt_decode from 'jwt-decode'
 import SearchShop from './SearchShop'
 import AddShop from './AddShop'
+import AddRest from './AddRest'
+import './Profile.css';
+import ppic from './../img_avatar.png'
+
 
 
 class Profile extends Component {
@@ -48,36 +52,56 @@ class Profile extends Component {
     render () {
         {if(this.state.showAddShop){
             var shop = (
-                <AddShop/>
+                <AddRest/>
             )
-         }    
+         } 
+   
         }
         return (
-            <div>
-                <table>
-                    <tbody>
-                    <tr><h2>PROFILE</h2></tr>
-                        <tr>
-                            <td>Username</td>
-                            <td>{this.state.username}</td>
-                        </tr>
-                        <tr>
-                            <td>Display Name</td>
+                // <table>
+                //     <tbody>
+                //     <tr><h2>PROFILE</h2></tr>
+                //         <tr>
+                //             <td>Username</td>
+                //             <td>{this.state.username}</td>
+                //         </tr>
+                //         <tr>
+                //             <td>Display Name</td>
+                //             <td>{this.state.display_name}</td>
+                //         </tr>
+                //         <tr>
+                //             <td>Email</td>
+                //             <td>{this.state.email}</td>
+                //         </tr>
+                //     </tbody>
+                // </table>
+                // <button onClick = {this.addShop}
+                //     className = "search-button">
+                //       Add Shop
+                // </button>  
+            <div className="pdiv">
+                <img src={ppic} className="profile-pic"/>
+                    <table className="ptable">
+                    <tr>{this.state.username}</tr>
+                        <tr className="ptr">
                             <td>{this.state.display_name}</td>
                         </tr>
-                        <tr>
-                            <td>Email</td>
+                        <tr className="ptr">
                             <td>{this.state.email}</td>
                         </tr>
-                    </tbody>
-                </table>
-                
+                        <tr><td><br/></td></tr>
+                        <tr className="ptr">
+                            <td>
+                                <button 
+                                    class= "btn btn-danger"
+                                    onClick = {this.addShop}>
+                                    Add Shop
+                                </button>  
+                            </td>
+                        </tr>
+                    </table>
                
 
-                <button onClick = {this.addShop}
-                    className = "search-button">
-                      Add Shop
-                </button>  
                 {shop}
                 <SearchShop/>
             </div>
